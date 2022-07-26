@@ -13,15 +13,9 @@ const style = {
 
 const Board = ({ squares, onClick }) => (
   <div style={style}>
-    <Square value="1" onClick={() => onClick("dummy Value")} />
-    <Square value="2" onClick={() => onClick("dummy Value")} />
-    <Square value="3" onClick={() => onClick("dummy Value")} />
-    <Square value="4" onClick={() => onClick("dummy Value")} />
-    <Square value="5" onClick={() => onClick("dummy Value")} />
-    <Square value="6" onClick={() => onClick("dummy Value")} />
-    <Square value="7" onClick={() => onClick("dummy Value")} />
-    <Square value="8" onClick={() => onClick("dummy Value")} />
-    <Square value="9" onClick={() => onClick("dummy Value")} />
+    {squares.map((square, i) => (
+      <Square key={i} value={square} onClick={() => onClick(i)} />
+    ))}
   </div>
 );
 
